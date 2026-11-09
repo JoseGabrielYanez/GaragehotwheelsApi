@@ -35,6 +35,9 @@ app.use((_req, res, next) => {
 });
 app.use("/uploads", serveUploads());
 
+app.get('/', (req, res) => {
+    res.send('Servidor de Garage Hot Wheels API: Conectado con éxito.');
+});
 app.get("/api/health", (_req, res) => {
   res.json({ ok: true });
 });
