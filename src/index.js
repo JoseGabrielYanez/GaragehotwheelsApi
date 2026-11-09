@@ -29,11 +29,6 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 
-res.cookie("token", token, {
-  httpOnly: true,
-  secure: true,
-  sameSite: "none"
-});
 
 app.use(cors({
   origin: "https://garagehotwheelsapp.onrender.com",
