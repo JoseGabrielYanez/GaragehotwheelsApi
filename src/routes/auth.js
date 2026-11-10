@@ -13,8 +13,8 @@ import { createResetToken, hashToken, isValidTokenFormat } from "../utils/tokens
 const router = Router();
 const cookieOptions = {
   httpOnly: true,
-  sameSite: "lax",
-  secure: process.env.NODE_ENV === "production",
+  sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+  secure:  process.env.NODE_ENV === "production", 
   maxAge: 1000 * 60 * 60 * 24 * 7
 };
 // Para borrar la cookie no se envía maxAge (Express 5 lo ignora y Express 4 ya lo desaconseja)
